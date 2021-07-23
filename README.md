@@ -4,9 +4,9 @@
 
 add controle interface for slackbot with Golang.
 
-## useage
+## Useage
 
-## author
+## Author
 
 - im-miro
   - cloud infrastructure engineer
