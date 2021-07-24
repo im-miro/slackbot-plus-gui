@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>slackbot-plus-GUI</title>
+    <link href="templates/css/bootstrap.css" rel="stylesheet" />
+  </head>
+  <body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="templates/js/bootstrap.js"></script>
+    <h1>TOKENs</h1>
+    <div class="d-flex justify-content-center">
+      <ul>
+        {{range .data_tokens}}
+        <div class="p-1 mb-1 bg-info text-white rounded">
+          <li><h3>&nbsp;&nbsp;{{.Token_number}}&nbsp;&nbsp;</h3></li>
+        </div>
+        <div class="p-1 mb-1 bg-dark text-white rounded">
+          <li>
+            <h2>&nbsp;&nbsp;{{.Token_identifier_message}} : </h2>
+            <h2>&nbsp;&nbsp;{{.Token}}&nbsp;&nbsp;</h2>
+          </li>
+        </div>
+        {{end}}
+        <p>&nbsp;</p>
+        <form method="post" action="/post_token">
+          <div class="mb-3">
+            <label for="Inputname" class="form-label">Write token name</label>
+            <input
+              type="text"
+              name="token_name"
+              class="form-control"
+              id="token_name"
+              values=""
+              aria-describedby="Inputname"
+            />
+            <div id="Inputname" class="form-text">token name</div>
+          </div>
+          <div class="mb-3">
+            <label for="Inputmsg" class="form-label">token</label>
+            <input
+              type="text"
+              name="token"
+              class="form-control"
+              id="token"
+              values=""
+              aria-describedby="Inputmsg"
+            />
+            <div id="Inputmsg" class="form-text">Write token</div>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </ul>
+    </div>
+  </body>
+</html>
